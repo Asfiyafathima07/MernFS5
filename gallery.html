@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f2f4f3;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      border-bottom: 4px solid orange;
+      margin: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .photo {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Photo Gallery</h1>
+
+  <div class="gallery">
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 1"></div>
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 2"></div>
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 3"></div>
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 4"></div>
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 5"></div>
+    <div class="photo"><img src="c:\Users\asfiy\OneDrive\Pictures\Screenshots\Screenshot 2025-05-30 184155.png" alt="Image 6"></div>
+  </div>
+
+</body>
+</html>
