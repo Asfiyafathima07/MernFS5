@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: white;
+      margin: 0;
+    }
+    .calculator {
+      background: #555;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+    .display {
+      background: white;
+      color: black;
+      font-size: 24px;
+      height: 40px;
+      text-align: right;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border: none;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 5px;
+    }
+    button {
+      padding: 15px;
+      font-size: 18px;
+      background: #33ccc9;
+      border: none;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:active {
+      background: #28b2b0;
+    }
+    .file-links {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .file-links a {
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .file-links a:hover {
+      color: #33ccc9;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="display" readonly value="0">
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="append('%')">%</button>
+      <button onclick="backspace()">&larr;</button>
+      <button onclick="append('/')">/</button>
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">*</button>
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">-</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
+      <button onclick="append('00')">00</button>
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+  <div class="file-links">
+    <a href="gallery.html">gallery.html</a>
+    <a href="schooldashboard.html">schooldashboard.html</a>
+  </div>
+  <script>
+    function append(char) {
+      const display = document.getElementById("display");
+      if (display.value === "0") display.value = char;
+      else display.value += char;
+    }
+    function clearDisplay() {
+      document.getElementById("display").value = "0";
+    }
+    function backspace() {
+      const display = document.getElementById("display");
+      display.value = display.value.slice(0, -1) || "0";
+    }
+    function calculate() {
+      const display = document.getElementById("display");
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+    }
+  </script>
+</body>
+</html>
